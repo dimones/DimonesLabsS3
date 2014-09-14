@@ -27,7 +27,7 @@ Task::Task(char* t1, char* t2,int t3){
  *  Default destructor
  */
 Task::~Task(){
-    cout << "Destructor (value:" << value << ")" << " with address: " << this <<endl;
+    //cout << "Destructor (value:" << value << ")" << " with address: " << this <<endl;
 }
 /**
  *  Print value and info in class

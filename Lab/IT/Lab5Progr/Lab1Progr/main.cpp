@@ -9,44 +9,30 @@
 #include <iostream>
 #include "Task.h"
 #include "Binary.h"
+#include "List.h"
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    Task a = "51";
-    Task b = "21";
-    cout << a - b + 15 << endl;
-    cout << ++a << endl;
-    cout << a++ <<endl;
-    cout << a.GetValue() << endl;
-    a = "51";
-    cout << a + "51" << endl;
+    List *t = new List();
+    t->pushFirst(new Task("hello"));
+    t->pushFirst(new Task("HI"));
+    t->pushFirst(new Task("ZIGA"));
+    t->pushFirst(new Task("AZAZAZA"));
+    t->pushBack(new Task("51"));
+    t->insert(1, new Task("TEST"));
+    t->Print();
     
-    Task d = "5125121";
-    cout << "Vvedite ebanoe chislo" << endl;
-    cin >> d;
-    cout << d + "125" <<endl;
-    
-    
-    ofstream outfile ("out",ofstream::binary);
-    //outfile << d;
-    
-    Task e;
-    ifstream infile("out",ifstream::binary);
-   // infile >> e;
-    
-    cout <<"eqasg";
-    d.Write(outfile);
-    outfile.close();
-    
-    cout <<"LOL" <<endl;
-    e.Read(infile);
-    
-    Binary t = 11360;
-    t.string.Print();
     cout << endl;
-    cout << "COOL:: " << t.string << endl;
+    t->deleteNth(3);
+    t->Print();
+    t->insert(2, new Task("HELLO NIGGA BITCH"));
+    cout << endl;
+    t->Print();
+    cout << endl;
     
-    TaskList list(TaskList(true, false, BEGIN));
-    cout << "LIST: " << list << endl;
+    
+    
+    
+    
     return 0;
 }

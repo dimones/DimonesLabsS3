@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		462AD01519C2B36A007BBA0D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 462AD01419C2B36A007BBA0D /* main.cpp */; };
 		462AD02119C2B5B2007BBA0D /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 462AD02019C2B5B2007BBA0D /* Task.cpp */; };
+		46BF6BCC19C4B19800737507 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46BF6BCA19C4B19800737507 /* List.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		462AD01119C2B369007BBA0D /* Lab4Progr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab4Progr; sourceTree = BUILT_PRODUCTS_DIR; };
+		462AD01119C2B369007BBA0D /* Lab5Progr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab5Progr; sourceTree = BUILT_PRODUCTS_DIR; };
 		462AD01419C2B36A007BBA0D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		462AD01B19C2B3F1007BBA0D /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		462AD02019C2B5B2007BBA0D /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Task.cpp; sourceTree = "<group>"; };
+		46BF6BCA19C4B19800737507 /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
+		46BF6BCB19C4B19800737507 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		46EF9E5D19C35A23006FFCCA /* Binary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +56,7 @@
 		462AD01219C2B369007BBA0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				462AD01119C2B369007BBA0D /* Lab4Progr */,
+				462AD01119C2B369007BBA0D /* Lab5Progr */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +68,8 @@
 				462AD01B19C2B3F1007BBA0D /* Task.h */,
 				462AD02019C2B5B2007BBA0D /* Task.cpp */,
 				46EF9E5D19C35A23006FFCCA /* Binary.h */,
+				46BF6BCA19C4B19800737507 /* List.cpp */,
+				46BF6BCB19C4B19800737507 /* List.h */,
 			);
 			path = Lab1Progr;
 			sourceTree = "<group>";
@@ -72,9 +77,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		462AD01019C2B369007BBA0D /* Lab4Progr */ = {
+		462AD01019C2B369007BBA0D /* Lab5Progr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 462AD01819C2B36A007BBA0D /* Build configuration list for PBXNativeTarget "Lab4Progr" */;
+			buildConfigurationList = 462AD01819C2B36A007BBA0D /* Build configuration list for PBXNativeTarget "Lab5Progr" */;
 			buildPhases = (
 				462AD00D19C2B369007BBA0D /* Sources */,
 				462AD00E19C2B369007BBA0D /* Frameworks */,
@@ -84,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = Lab4Progr;
+			name = Lab5Progr;
 			productName = Lab1Progr;
-			productReference = 462AD01119C2B369007BBA0D /* Lab4Progr */;
+			productReference = 462AD01119C2B369007BBA0D /* Lab5Progr */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 462AD00C19C2B369007BBA0D /* Build configuration list for PBXProject "Lab4Progr" */;
+			buildConfigurationList = 462AD00C19C2B369007BBA0D /* Build configuration list for PBXProject "Lab5Progr" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -115,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				462AD01019C2B369007BBA0D /* Lab4Progr */,
+				462AD01019C2B369007BBA0D /* Lab5Progr */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BF6BCC19C4B19800737507 /* List.cpp in Sources */,
 				462AD02119C2B5B2007BBA0D /* Task.cpp in Sources */,
 				462AD01519C2B36A007BBA0D /* main.cpp in Sources */,
 			);
@@ -215,7 +221,7 @@
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_VERSION = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = Lab4Progr;
+				PRODUCT_NAME = Lab5Progr;
 			};
 			name = Debug;
 		};
@@ -227,14 +233,14 @@
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_VERSION = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = Lab4Progr;
+				PRODUCT_NAME = Lab5Progr;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		462AD00C19C2B369007BBA0D /* Build configuration list for PBXProject "Lab4Progr" */ = {
+		462AD00C19C2B369007BBA0D /* Build configuration list for PBXProject "Lab5Progr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				462AD01619C2B36A007BBA0D /* Debug */,
@@ -243,7 +249,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		462AD01819C2B36A007BBA0D /* Build configuration list for PBXNativeTarget "Lab4Progr" */ = {
+		462AD01819C2B36A007BBA0D /* Build configuration list for PBXNativeTarget "Lab5Progr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				462AD01919C2B36A007BBA0D /* Debug */,

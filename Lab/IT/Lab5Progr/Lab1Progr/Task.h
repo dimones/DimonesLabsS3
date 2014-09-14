@@ -28,7 +28,7 @@ public:
     Task() {}
     ~Task();
     Task(char*,char*,int);
-    void Print();
+    virtual void Print();
     char* GetValue();
     void changeString();
     void changeString(char*);

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "462AD01019C2B369007BBA0D"
                BuildableName = "Lab4Progr"
-               BlueprintName = "Lab4Progr"
-               ReferencedContainer = "container:Lab4Progr.xcodeproj">
+               BlueprintName = "Lab5Progr"
+               ReferencedContainer = "container:Lab5Progr.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "462AD01019C2B369007BBA0D"
             BuildableName = "Lab4Progr"
-            BlueprintName = "Lab4Progr"
-            ReferencedContainer = "container:Lab4Progr.xcodeproj">
+            BlueprintName = "Lab5Progr"
+            ReferencedContainer = "container:Lab5Progr.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "462AD01019C2B369007BBA0D"
             BuildableName = "Lab4Progr"
-            BlueprintName = "Lab4Progr"
-            ReferencedContainer = "container:Lab4Progr.xcodeproj">
+            BlueprintName = "Lab5Progr"
+            ReferencedContainer = "container:Lab5Progr.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "462AD01019C2B369007BBA0D"
             BuildableName = "Lab4Progr"
-            BlueprintName = "Lab4Progr"
-            ReferencedContainer = "container:Lab4Progr.xcodeproj">
+            BlueprintName = "Lab5Progr"
+            ReferencedContainer = "container:Lab5Progr.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
