@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ECBA16B1-7EAE-4FAB-B559-8CA8013CF6C2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Lab6Progr</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6AE0F6E2B33A332C97947204F5D0B8F272D7E865</key>
+		<string>https://github.com/dimones/DimonesLabsS3.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Lab/IT/Lab6Progr/Lab6Progr.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6AE0F6E2B33A332C97947204F5D0B8F272D7E865</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dimones/DimonesLabsS3.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6AE0F6E2B33A332C97947204F5D0B8F272D7E865</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6AE0F6E2B33A332C97947204F5D0B8F272D7E865</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DimonesLabsS3</string>
+		</dict>
+	</array>
+</dict>
+</plist>
