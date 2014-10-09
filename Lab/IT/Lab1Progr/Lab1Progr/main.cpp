@@ -28,5 +28,11 @@ int main(int argc, const char * argv[]) {
     
     cout << "lower case =3 :" << t.ToLower() << endl;
     
+    
+    
+    //Static var demonstration:
+    t.sampleStatic = "For test";
+    
+    cout << "From object: " << t.sampleStatic <<"   from class:" << Task::sampleStatic << endl;
     return 0;
 }

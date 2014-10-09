@@ -22,6 +22,7 @@ class Task {
     int length;
     char *time_buf = new char[50];
 public:
+    static char* sampleStatic;
     Task(char*);
     ~Task();
     void Print();

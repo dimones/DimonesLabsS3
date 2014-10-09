@@ -7,6 +7,8 @@
 //
 
 #include "Task.h"
+//Init static vars
+char* Task::sampleStatic = NULL;
 /**
  *  Constructor with char array pointer
  */
