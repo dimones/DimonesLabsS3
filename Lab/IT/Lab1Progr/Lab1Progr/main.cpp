@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     t.Print();
     char* k = new char[strlen(t.GetValue())];
     k = t.GetValue();
-    cout << "vvedit podsktroky для поиска" << endl;
+    cout << "Введите подстроку для поиска" << endl;
     char* tempch = new char[3125];
     cin.getline(tempch, 125);
     cout << "нашлось со знака: " << t.acrossIntoString(temp, tempch) << endl;
@@ -33,6 +33,8 @@ int main(int argc, const char * argv[]) {
     //Static var demonstration:
     t.sampleStatic = "For test";
     
-    cout << "From object: " << t.sampleStatic <<"   from class:" << Task::sampleStatic << endl;
+    cout << "From object: " << t.sampleStatic ;
+    Task::sampleStatic = "daa";
+    cout <<"   from class:" << Task::sampleStatic << endl;
     return 0;
 }

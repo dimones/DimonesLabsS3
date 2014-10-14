@@ -22,8 +22,8 @@ int main(int argc, const char * argv[]) {
     cout << a + "51" << endl;
     
     Task d = "5125121";
-    cout << "Vvedite ebanoe chislo" << endl;
-    cin >> d;
+    //cout << "Vvedite chislo" << endl;
+    //cin >> d;
     cout << d + "125" <<endl;
     
     
@@ -41,12 +41,13 @@ int main(int argc, const char * argv[]) {
     cout <<"LOL" <<endl;
     e.Read(infile);
     
-    Binary t = 11360;
+    Binary t = 32;
     t.string.Print();
     cout << endl;
     cout << "COOL:: " << t.string << endl;
     
-    TaskList list(TaskList(true, false, BEGIN));
-    cout << "LIST: " << list << endl;
+    TaskList list(TaskList("Вымыть посуду", "Пропылесосить", "Не начато"));
+    list.print();
+    list.
     return 0;
 }

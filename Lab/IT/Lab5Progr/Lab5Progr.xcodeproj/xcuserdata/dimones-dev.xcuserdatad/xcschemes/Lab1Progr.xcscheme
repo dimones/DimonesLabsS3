@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "462AD01019C2B369007BBA0D"
-               BuildableName = "Lab4Progr"
+               BuildableName = "Lab5Progr"
                BlueprintName = "Lab5Progr"
                ReferencedContainer = "container:Lab5Progr.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "462AD01019C2B369007BBA0D"
-            BuildableName = "Lab4Progr"
+            BuildableName = "Lab5Progr"
             BlueprintName = "Lab5Progr"
             ReferencedContainer = "container:Lab5Progr.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "462AD01019C2B369007BBA0D"
-            BuildableName = "Lab4Progr"
+            BuildableName = "Lab5Progr"
             BlueprintName = "Lab5Progr"
             ReferencedContainer = "container:Lab5Progr.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "462AD01019C2B369007BBA0D"
-            BuildableName = "Lab4Progr"
+            BuildableName = "Lab5Progr"
             BlueprintName = "Lab5Progr"
             ReferencedContainer = "container:Lab5Progr.xcodeproj">
          </BuildableReference>

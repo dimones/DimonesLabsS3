@@ -7,6 +7,8 @@
 //
 
 #include "Task.h"
+//Init static vars
+char* Task::sampleStatic = NULL;
 /**
  *  Constructor with char array pointer
  */
@@ -21,8 +23,7 @@ Task::Task(char *v){
  *  Default destructor
  */
 Task::~Task(){
-    cout << "Destructor (value:" << value << ")" << " with address: " << this <<endl;
-}
+    cout << "Destructor (value:" << value << ")" << " with address: " << this <<endl;}
 /**
  *  Print value and info in class
  */
@@ -37,24 +38,48 @@ void Task::Print(){
 char* Task::GetValue(){
     return value;
 }
+/**
+ *  Plus redefinition
+ *
+ *  @return counted value
+ */
 long Task::operator+(Task a)
 {
     return (atol(value)+atol(a.value));
 }
+/**
+  *  Minus redefinition
+  *
+  *  @return counted value
+  */
 long operator-(Task a,Task b)
 {
     return (atol(a.value)-atol(b.value));
 }
+/**
+  *  Post-Increment redefinition
+  *
+  *  @return counted value
+  */
 long operator++(Task a)
 {
     return (atol(a.value)+1);
-}
+}/**
+  *  Prefix-Increment redefinition
+  *
+  *  @return counted value
+  */
 long operator++(Task a,int)
 {
     Task oldValue(a.value);
     a.value++;
     return atol(oldValue.value);
 }
+/**
+  *  Equals redefinition
+  *
+  *  @return counted value
+  */
 long Task::operator=(Task a){
     if(a.value == value)
         return atol(value);

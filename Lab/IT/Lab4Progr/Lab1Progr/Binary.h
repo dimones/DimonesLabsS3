@@ -9,45 +9,24 @@
 #ifndef Lab4Progr_Binary_h
 #define Lab4Progr_Binary_h
 #include "Task.h"
-enum STATE {
-    BEGIN,IN_WORK,END
-};
-class Binary:public Task{
+#include <string>
+#include <bitset>
+using namespace std;
+class Binary:public Task{ // наследуем класс для хранения строки в нем
     char *binary_value;
     int c;
 public:
     Task string;
+    //constructor
     Binary(int ch){
         c = ch;
         int temp = ch;
         long dec,rem,i=1,sum=0;
-        /*char *t = new char[100];
-        while(temp>0)
-        {
-            if(temp%2==0)
-                strcat(t,"0");
-            else strcat(t, "1");
-            temp/=2;
-        }
-        char *tout = new char[strlen(t)];
-        char *binary_value = new char[strlen(t)];
-        for(int j = strlen(t);i<strlen(t);i++,j--)
-        {
-            tout[i] = t[j];
-        }
-        binary_value = t;*/
-        /*do
-        {
-            rem=dec%2;
-            sum=sum + (i*rem);
-            dec=dec/2;
-            i=i*10;
-        }while(dec>0);
-        */
-        string = decimal_to_binary(ch);
+        string = (char*)test(ch);
 
         cout << endl;
     };
+    //func for convert int into char*(binary format)
     char *decimal_to_binary(int n)
     {
         int c, d, count;
@@ -74,10 +53,47 @@ public:
         
         return  pointer;
     }
+    const char *test(int ch)
+    {
+        std::string result = "";
+        
+        do
+        {
+            if ( (ch & 1) == 0 )
+                result += "0";
+            else
+                result += "1";
+            
+            ch >>= 1;
+        } while ( ch );
+        
+        reverse(result.begin(), result.end());
+        return result.c_str();
+    }
+    char * int_to_bin(int ch)
+    {
+        char* _out = new char[124];
+        while(ch>=2)
+        {
+            if(ch%2==0)
+            {
+                strcat("0",_out);
+                //sprintf(_out,"%d",0);
+            }
+            else
+                strcat("0",_out);
+                //sprintf(_out,"%d",0);
+            ch/=2;
+        }
+        cout << "BINARY: " << _out << endl;
+        return _out;
+    }
+    //get value in binary(return char*)
     char* getValue(void)
     {
         return binary_value;
     }
+    // return value from class
     int getValue(int){
         return c;
     }
@@ -85,31 +101,32 @@ public:
 };
 //класс - запись в списке запланированных дел, содержащая начало и конец работы, признак выполнения.
 class TaskList : public Task{
-    STATE state;
-    bool begin;
-    bool end;
+    char* signState;
+    char* beginState;
+    char* endState;
 public:
+    //default constructor
     TaskList();
-    TaskList(bool _begin,bool _end,STATE _state){
-        begin = _begin;
-        end = _end;
-        state = _state;
+    //full-equipment constructor
+    TaskList(char* _beginState,char* _endState,char* _signState){
+        beginState = strdup(_beginState);
+        endState = strdup(_endState);
+        signState = strdup(_signState);
     }
-    void changeState(STATE t){
-        state = t;
+    // Funtions for manipulate with strings in this class
+    void changeSignState(char* _signState){
+        signState = strdup(_signState);
     }
-    void Begin()
+    void changeBeginState(char* _beginState)
     {
-        state = STATE::BEGIN;
-        begin = true;
+        beginState = strdup(_beginState);
     }
-    void END()
+    void changeEndState(char* _endState)
     {
-        state = STATE::END;
-        end = true;
+        endState = strdup(_endState);
     }
     void print(){
-        //cout << "Beginned: " << (begin==true)?"true":"false" << "  STATE: " << ((state == BEGIN)?"begin":((state == IN_WORK)?"in work":((state == END)?"ended":"don't know"))) << endl;
+        cout << "Begin: " << beginState << "   End state: " << endState << "   Sign state: " << signState << endl;
     }
     
 };

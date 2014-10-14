@@ -21,23 +21,20 @@ int main(int argc, const char * argv[]) {
     cout << a + "51" << endl;
     
     Task d = "5125121";
-    cout << "Vvedite ebanoe chislo" << endl;
-    cin >> d;
-    cout << d + "125" <<endl;
     
     
-    ofstream outfile ("out",ofstream::binary);
+   // ofstream outfile ("out.txt",ofstream::binary);
     //outfile << d;
     
     Task e;
-    ifstream infile("out",ifstream::binary);
-   // infile >> e;
+    ifstream infile("out.txt",ifstream::binary);
+    infile >> e;
     
-    cout <<"eqasg";
-    d.Write(outfile);
-    outfile.close();
-    
-    cout <<"LOL" <<endl;
-    e.Read(infile);
+    ofstream outfile_bin ("out",ofstream::binary);
+    cout <<"Write into binary:" << endl;
+    d.Write(outfile_bin);
+    outfile_bin.close();
+    //outfile.close();
+
     return 0;
 }

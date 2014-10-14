@@ -18,6 +18,7 @@ Task::Task(char *v){
     time_t timed = time(NULL);
     strftime(time_buf, 50, "%H:%M:%S %b %m %y", localtime(&timed));
 }
+//Constructor with different formal parameters
 Task::Task(char* t1, char* t2,int t3){
     strcpy(time_buf,t1);
     strcpy(time_buf,t2);
@@ -47,40 +48,63 @@ long Task::operator+(Task a)
 {
     return (atol(value)+atol(a.value));
 }
+/**
+ *  Minus redefinition
+ *
+ *  @return counted value
+ */
 long operator-(Task a,Task b)
 {
     return (atol(a.value)-atol(b.value));
 }
+/**
+ *  Post-Increment redefinition
+ *
+ *  @return counted value
+ */
 long operator++(Task a)
 {
     return (atol(a.value)+1);
-}
+}/**
+  *  Prefix-Increment redefinition
+  *
+  *  @return counted value
+  */
 long operator++(Task a,int)
 {
     Task oldValue(a.value);
     a.value++;
     return atol(oldValue.value);
 }
+/**
+ *  Equals redefinition
+ *
+ *  @return counted value
+ */
 long Task::operator=(Task a){
     if(a.value == value)
         return atol(value);
     strcpy(value,a.value);
     return atol(value);
 }
+//Re-defenition block standard I/O
 ostream& operator<<(ostream &stream,Task &t){
     stream << t.value;
     return stream;
 }
+
 istream& operator>>(istream &stream,Task &t){
     char * temp = new char[1024];
     stream >> temp;
     t.changeString(temp);
     return stream;
 }
+//Re-defenition output operator stream
 ofstream& operator<< ( ofstream& os, Task& dt ) {
     os << dt.value << endl << dt.time_buf << endl << dt.length;
     return os;
 }
+//Re-defenition input operator stream
 ifstream& operator>> ( ifstream& is, Task& dt ) {
     char * temp = new char[1024];
     char * temp_buf_time = new char[50];
@@ -101,14 +125,15 @@ void Task::SetLength(int t)
 {
     length = t;
 }
-
+//Binary I/O
+//Read from fstream thread
 void Task::Read(ifstream &stream)
 {
     stream.read((char*)&value, sizeof(value));
     stream.read((char*)&time_buf, sizeof(time_buf));
     stream.read((char*)&length, sizeof(length));
 }
-
+//Write into fstream thread
 void Task::Write(ofstream &stream)
 {
     stream.write((char*)&value, sizeof(value));

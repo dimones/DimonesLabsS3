@@ -37,6 +37,7 @@ public:
     char* ToUpper();
     char* ToLower();
     char* ToLower(char*);
+    bool isNull() { if(!this) return true; else return false; }
     /*Lab 3*/
     long operator+(Task b);
     friend long operator-(Task a,Task b);

@@ -16,8 +16,8 @@ int main(int argc, const char * argv[]) {
     List *t = new List();
     t->pushFirst(new Task("hello"));
     t->pushFirst(new Task("HI"));
-    t->pushFirst(new Task("ZIGA"));
-    t->pushFirst(new Task("AZAZAZA"));
+    t->pushFirst(new Task("125"));
+    t->pushFirst(new Task("136247"));
     t->pushBack(new Task("51"));
     t->insert(1, new Task("TEST"));
     t->Print();
@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
     cout << endl;
     t->deleteNth(3);
     t->Print();
-    t->insert(2, new Task("HELLO NIGGA BITCH"));
+    t->insert(2, new Task("HELLO world"));
     cout << endl;
     t->Print();
     cout << endl;

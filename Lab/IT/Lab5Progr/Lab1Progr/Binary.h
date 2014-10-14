@@ -21,29 +21,6 @@ public:
         c = ch;
         int temp = ch;
         long dec,rem,i=1,sum=0;
-        /*char *t = new char[100];
-        while(temp>0)
-        {
-            if(temp%2==0)
-                strcat(t,"0");
-            else strcat(t, "1");
-            temp/=2;
-        }
-        char *tout = new char[strlen(t)];
-        char *binary_value = new char[strlen(t)];
-        for(int j = strlen(t);i<strlen(t);i++,j--)
-        {
-            tout[i] = t[j];
-        }
-        binary_value = t;*/
-        /*do
-        {
-            rem=dec%2;
-            sum=sum + (i*rem);
-            dec=dec/2;
-            i=i*10;
-        }while(dec>0);
-        */
         string = decimal_to_binary(ch);
 
         cout << endl;

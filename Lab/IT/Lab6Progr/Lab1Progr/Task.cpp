@@ -169,10 +169,19 @@ void Task::changeString()
     char* ch;
     try{
         ch = new char[1000];
+        if(!ch)
+            throw 1;
     }
     catch(int a)
     {
-        cerr << "Task::changeString mem alloc error code" << a << endl;
+        switch (a) {
+            case 1:                
+                cerr << "Task::changeString mem alloc error code" << a << endl;
+                break;
+                
+            default:
+                break;
+        }
     }
     cin.getline(ch,999);
     if(ch){

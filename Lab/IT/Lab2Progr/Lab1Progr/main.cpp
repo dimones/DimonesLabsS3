@@ -16,7 +16,13 @@ int main(int argc, const char * argv[]) {
     cout << a - b + 15 << endl;
     cout << ++a << endl;
     cout << a++ <<endl;
-    cout << a.GetValue();
+    cout << a.GetValue() << endl;
     a = "51";
+    
+    // recast object
+    const char* t = (char*)a;
+    cout << "PRINT!!!: " << t << endl;
+    cout << "Print string: " << a << endl;
+    
     return 0;
 }

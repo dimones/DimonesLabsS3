@@ -21,6 +21,7 @@ class Task {
     char *value;
     int length;
     char *time_buf = new char[50];
+    static char* sampleStatic;
 public:
     Task(char*);
     Task() { value[0] = 0;}
@@ -38,6 +39,9 @@ public:
     friend long operator-(Task a,Task b);
     friend long operator++(Task a);
     friend long operator++(Task a,int);
+    operator char* () { return value; } // возможна модификация объекта через результат приведения
+    operator const char* () const { return value; }
+    operator string() { return string(value); }
     long operator=(Task a);
 };
 
