@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1DA3089C-2695-4253-BF9E-35AF126B54DC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Lab4Progr</string>
+	<string>Lab5Progr</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6AE0F6E2B33A332C97947204F5D0B8F272D7E865</key>
 		<string>https://github.com/dimones/DimonesLabsS3.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Lab/IT/Lab4Progr/Lab4Progr.xcodeproj</string>
+	<string>Lab/IT/Lab5Progr/Lab5Progr.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6AE0F6E2B33A332C97947204F5D0B8F272D7E865</key>

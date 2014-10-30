@@ -66,6 +66,7 @@ public:
        // reNumber();
     }
     
+    template <class List>
     Node<Task>* getLast(Node<Task> *head) {
         Node<Task> *temp = new Node<Task>();
         temp = head;
@@ -77,6 +78,8 @@ public:
         }
         return temp;
     }
+    
+    template <class List>
     Task* pop() {
         Node<Task>* prev = NULL;
         Task* val;
@@ -89,13 +92,15 @@ public:
         free(prev);
         return val;
     }
+    
+    template <class List>
     Task* deleteNth(int n) {
         Task *val;
         if (n == 0) {
             head = NULL;
             return 0;
         } else {
-            Node<Task> *prev = getNth(head,n-1);
+            Node<Task> *prev = getNth<List>(head,n-1);
             Node<Task> *elm  = prev->next;
             val = elm->obj;
             prev->next = elm->next;
@@ -106,6 +111,7 @@ public:
         size--;
         return val;
     }
+    template <class List>
     Node<Task>* getNth(Node<Task>*& hh,int n)
     {
         Node<Task>* temp = new Node<Task>();
@@ -120,7 +126,7 @@ public:
     void pushBack(Task *t)
     {
         if(head == NULL) { pushFirst(t); return; }
-        Node<Task> *last = getLast(head);
+        Node<Task> *last = getLast<List>(head);
         Node<Task> *tmp = (Node<Task>*) malloc(sizeof(Node<Task>));
         tmp->obj = t;
         tmp->next = NULL;
@@ -139,6 +145,7 @@ public:
             tmp->index = i;
         }
     }
+    template <class List>
     Task* toArray() {
         int leng = size;
         Node<Task> *tmp = (Node<Task>*) malloc(sizeof(Node<Task>));
@@ -198,7 +205,7 @@ public:
         
     }
     int Count(){ return size; }
-    
+    template <class List>
     Node<Task>* operator[](unsigned int i){
         Node<Task> *_out = head;
         for(int _i = 0; _i<i&&_out;_i++)

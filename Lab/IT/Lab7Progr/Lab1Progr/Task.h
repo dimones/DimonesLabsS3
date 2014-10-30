@@ -20,11 +20,36 @@
 using namespace std;
 
 class Task {
+    enum Types{ Int,Float,String,TaskValue};
+    Types type;
     char *value;
     int length;
     char *time_buf = new char[50];
+    int intValue;
+    float floatValue;
 public:
-    Task(char*);
+    Task(char* v){
+        if(!v) return;
+        length = strlen(v);
+        value = new char[length];
+        value = v;
+        time_t timed = time(NULL);
+        strftime(time_buf, 50, "%H:%M:%S %b %m %y", localtime(&timed));
+        type = Types::TaskValue;
+    }
+
+    Task(int _intValue) {
+        type = Types::Int;
+        intValue = _intValue;
+        time_t timed = time(NULL);
+        strftime(time_buf, 50, "%H:%M:%S %b %m %y", localtime(&timed));
+    }
+    Task(float _floatValue){
+        type = Types::Float;
+        floatValue = _floatValue;
+        time_t timed = time(NULL);
+        strftime(time_buf, 50, "%H:%M:%S %b %m %y", localtime(&timed));
+    }
     Task() {}
     ~Task();
     Task(char*,char*,int);

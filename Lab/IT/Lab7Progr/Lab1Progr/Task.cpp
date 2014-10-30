@@ -10,14 +10,14 @@
 /**
  *  Constructor with char array pointer
  */
-Task::Task(char *v){
+/*Task::Task(char *v){
     if(!v) return;
     length = strlen(v);
     value = new char[length];
     value = v;
     time_t timed = time(NULL);
     strftime(time_buf, 50, "%H:%M:%S %b %m %y", localtime(&timed));
-}
+}*/
 Task::Task(char* t1, char* t2,int t3){
     strcpy(time_buf,t1);
     strcpy(time_buf,t2);
@@ -33,7 +33,12 @@ Task::~Task(){
  *  Print value and info in class
  */
 void Task::Print(){
-    cout << "Value: " << value << " time: " <<time_buf  << " string length: " << length <<endl;
+    if(type == TaskValue)
+        cout << "Value: " << value << " time: " <<time_buf  << " string length: " << length <<endl;
+    else if(type == Float)
+        cout << "Value: " << floatValue << " time: " <<time_buf <<endl;
+    else if(type == Int)
+        cout << "Value: " << intValue << " time: " <<time_buf <<endl;
 }
 /**
  *  Give char array pointer from class data

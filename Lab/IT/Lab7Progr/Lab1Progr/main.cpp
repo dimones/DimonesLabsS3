@@ -15,10 +15,11 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     List<Task> test = List<Task>();
     test.pushBack(new Task("test"));
-    test.pushBack(new Task("LOL"));
+    test.pushBack(new Task(5.12f));
+    test.pushBack(new Task(5));
     test.Print();
+    test.deleteNth<Task>(1);
     cout << endl;
-    test.deleteLast();
     test.Print();
     
     

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lab1Progr/Task.cpp"
-            timestampString = "432444832.54437"
+            timestampString = "436370363.27148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "operator&gt;&gt;(istream &amp;stream,Task &amp;t)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lab1Progr/Task.cpp"
-            timestampString = "432444832.54437"
+            timestampString = "436370363.27148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "operator&gt;&gt;(istream &amp;stream,Task &amp;t)"
             landmarkType = "7">
          </BreakpointContent>
