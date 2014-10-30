@@ -14,19 +14,21 @@
 #include <ctime>
 #include <stdio.h>
 #include <ctype.h>
-
+#include <sstream>
+#include <istream>
+#include <fstream>
 using namespace std;
 
 class Task {
     char *value;
     int length;
     char *time_buf = new char[50];
-    static char* sampleStatic;
 public:
     Task(char*);
-    Task() { value[0] = 0;}
+    Task() {}
     ~Task();
-    void Print();
+    Task(char*,char*,int);
+    virtual void Print();
     char* GetValue();
     void changeString();
     void changeString(char*);
@@ -35,15 +37,23 @@ public:
     char* ToUpper();
     char* ToLower();
     char* ToLower(char*);
-    /* Lab 2*/
+    bool isNull() { if(!this) return true; else return false; }
+    /*Lab 3*/
     long operator+(Task b);
     friend long operator-(Task a,Task b);
     friend long operator++(Task a);
     friend long operator++(Task a,int);
-    operator char* () { return value; } // возможна модификация объекта через результат приведения
-    operator const char* () const { return value; }
-    operator string() { return string(value); }
     long operator=(Task a);
+    friend ostream &operator<<(ostream &stream,Task &t);
+    friend istream &operator>>(istream &stream,Task &t);
+    friend ofstream &operator<<(ofstream &stream,Task &t);
+    friend ifstream &operator>>(ifstream &stream,Task &t);
+    //Helper funcs
+    void SetTime(char *);
+    void SetLength(int);
+    //Binary reader/writer
+    void Read(ifstream &stream);
+    void Write(ofstream &stream);
 };
 
 #endif

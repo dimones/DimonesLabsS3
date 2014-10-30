@@ -7,23 +7,28 @@
 //
 
 #include "Task.h"
-//Init static vars
-char* Task::sampleStatic = NULL;
 /**
  *  Constructor with char array pointer
  */
 Task::Task(char *v){
+    if(!v) return;
     length = strlen(v);
     value = new char[length];
     value = v;
     time_t timed = time(NULL);
     strftime(time_buf, 50, "%H:%M:%S %b %m %y", localtime(&timed));
 }
+Task::Task(char* t1, char* t2,int t3){
+    strcpy(time_buf,t1);
+    strcpy(time_buf,t2);
+    length = t3;
+}
 /**
  *  Default destructor
  */
 Task::~Task(){
-    cout << "Destructor (value:" << value << ")" << " with address: " << this <<endl;}
+    //cout << "Destructor (value:" << value << ")" << " with address: " << this <<endl;
+}
 /**
  *  Print value and info in class
  */
@@ -38,54 +43,122 @@ void Task::Print(){
 char* Task::GetValue(){
     return value;
 }
-/**
- *  Plus redefinition
- *
- *  @return counted value
- */
 long Task::operator+(Task a)
 {
     return (atol(value)+atol(a.value));
 }
-/**
-  *  Minus redefinition
-  *
-  *  @return counted value
-  */
 long operator-(Task a,Task b)
 {
     return (atol(a.value)-atol(b.value));
 }
-/**
-  *  Post-Increment redefinition
-  *
-  *  @return counted value
-  */
 long operator++(Task a)
 {
     return (atol(a.value)+1);
-}/**
-  *  Prefix-Increment redefinition
-  *
-  *  @return counted value
-  */
+}
 long operator++(Task a,int)
 {
     Task oldValue(a.value);
     a.value++;
     return atol(oldValue.value);
 }
-/**
-  *  Equals redefinition
-  *
-  *  @return counted value
-  */
 long Task::operator=(Task a){
     if(a.value == value)
         return atol(value);
-    strcpy(value,a.value);
+    value = strdup(a.value);
     return atol(value);
 }
+ostream& operator<<(ostream &stream,Task &t){
+    try
+    {
+        stream << t.value;
+    }
+    catch (const exception &ex) {
+        cout << "ERROR: " << ex.what() <<endl;
+    }
+    return stream;
+}
+/**
+ *  redefinition input file stream operator
+ *
+ *  @param stream input stream
+ *  @param t      custom Class
+ *
+ *  @return input file stream
+ */
+istream& operator>>(istream &stream,Task &t){
+    try
+    {
+        char * temp = new char[1024];
+        stream >> temp;
+        t.changeString(temp);
+    } catch (exception &ex) {
+    cout << "ERROR: " << ex.what() <<endl;
+    }
+    return stream;
+}
+ofstream& operator<< ( ofstream& os, Task& dt ) {
+    os << dt.value << endl << dt.time_buf << endl << dt.length;
+    return os;
+}
+ifstream& operator>> ( ifstream& is, Task& dt ) {
+    char * temp = new char[1024];
+    char * temp_buf_time = new char[50];
+    int temp_length;
+    is >> temp >> temp_buf_time >> temp_length;    
+    dt.SetTime(temp_buf_time);
+    dt.changeString(temp);
+    dt.SetLength(temp_length);
+    return is;
+}
+
+void  Task::SetTime(char *t)
+{
+    try{
+        if(!time_buf) time_buf = new char[50];
+    }
+    catch(int a)
+    {
+        cerr << "Task::SetTime MEM ALLOC error code" << a << endl;
+    }
+    try{
+        strcpy(time_buf, t);
+    }
+    catch(int a)
+    {
+        cerr << "Task::SetTime copy value error code" << a << endl;
+    }
+}
+void Task::SetLength(int t)
+{
+    length = t;
+}
+
+void Task::Read(ifstream &stream)
+{
+    try{
+        stream.read((char*)&value, sizeof(value));
+        stream.read((char*)&time_buf, sizeof(time_buf));
+        stream.read((char*)&length, sizeof(length));
+    }
+    catch(int a)
+    {
+        cerr <<"Task::Read Error with code:" << a << endl;
+    }
+}
+
+void Task::Write(ofstream &stream)
+{
+    try {
+        stream.write((char*)&value, sizeof(value));
+        stream.write((char*)&time_buf, sizeof(time_buf));
+        stream.write((char*)&length, sizeof(length));
+    }
+    catch(int a)
+    {
+        cerr <<"Task::Write Error with code:" << a << endl;
+    }
+}
+
 /**
  *  Automatically changed string
  */
@@ -93,7 +166,23 @@ void Task::changeString()
 {
     cout << "Текущая строка: " << value <<endl;
     cout << "Введите новую строку" << endl;
-    char* ch = new char[1000];
+    char* ch;
+    try{
+        ch = new char[1000];
+        if(!ch)
+            throw 1;
+    }
+    catch(int a)
+    {
+        switch (a) {
+            case 1:                
+                cerr << "Task::changeString mem alloc error code" << a << endl;
+                break;
+                
+            default:
+                break;
+        }
+    }
     cin.getline(ch,999);
     if(ch){
         if(!value)
@@ -127,7 +216,7 @@ void Task::changeString(char *t){
             value = t;
         }
     }
-    else cout << "error: null string";
+    else cout <<"error: null string";
 }
 /**
  *  Find substring first entry in string
