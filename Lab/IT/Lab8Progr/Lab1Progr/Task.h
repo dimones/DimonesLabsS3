@@ -18,10 +18,10 @@
 using namespace std;
 
 class Task {
-    char *value;
     int length;
     char *time_buf = new char[50];
-public:
+public:    
+    char *value;
     static char* sampleStatic;
     Task(char*);
     ~Task();
@@ -34,7 +34,6 @@ public:
     char* ToUpper();
     char* ToLower();
     char* ToLower(char*);
-    
 };
 
 #endif
