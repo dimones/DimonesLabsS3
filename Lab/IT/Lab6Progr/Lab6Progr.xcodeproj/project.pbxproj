@@ -29,6 +29,7 @@
 		462AD01B19C2B3F1007BBA0D /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		462AD02019C2B5B2007BBA0D /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Task.cpp; sourceTree = "<group>"; };
 		46BF6BCB19C4B19800737507 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		46C64B671A152EE3007E0AB0 /* Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
 		46EF9E5D19C35A23006FFCCA /* Binary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +68,7 @@
 				462AD02019C2B5B2007BBA0D /* Task.cpp */,
 				46EF9E5D19C35A23006FFCCA /* Binary.h */,
 				46BF6BCB19C4B19800737507 /* List.h */,
+				46C64B671A152EE3007E0AB0 /* Error.h */,
 			);
 			path = Lab1Progr;
 			sourceTree = "<group>";

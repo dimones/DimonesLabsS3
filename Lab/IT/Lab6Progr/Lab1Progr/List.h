@@ -9,6 +9,8 @@
 #ifndef __Lab4Progr__List__
 #define __Lab4Progr__List__
 #include "Task.h"
+#include "Error.h"
+
 class Node : public Task{
 public:
     Task *obj;
@@ -41,21 +43,34 @@ public:
     }
     
     Node* getLast(Node *head) {
+        
+            
         Node *temp = new Node();
-        temp = head;
-        if (temp == NULL) {
-            return NULL;
-        }
-        while (temp->next) {
-            temp = temp->next;
+        try {
+            temp = head;
+            if (temp == NULL) {
+                return NULL;
+            }
+            while (temp->next) {
+                temp = temp->next;
+            }
+        } catch (Error err) {
+            
         }
         return temp;
     }
     Task* pop() {
         Node* prev = NULL;
         Task* val;
-        if (head == NULL) {
-            exit(-1);
+        try{
+            if (head == NULL) {
+                throw Error::NullPointerException();
+                exit(-1);
+            }
+        }
+        catch(Error err)
+        {
+            
         }
         prev = (head);
         val = prev->obj;
@@ -91,15 +106,22 @@ public:
         }
         return temp;
      }
+    //malloc
     void pushBack(Task *t)
     {
-        if(head == NULL) { pushFirst(t); return; }
-        Node *last = getLast(head);
-        Node *tmp = (Node*) malloc(sizeof(Node));
-        tmp->obj = t;
-        tmp->next = NULL;
-        last->next = tmp;
-        size++;
+        try{
+            if(head == NULL) { pushFirst(t); return; }
+            Node *last = getLast(head);
+            Node *tmp = (Node*) malloc(sizeof(Node));
+            tmp->obj = t;
+            tmp->next = NULL;
+            last->next = tmp;
+            size++;
+        }
+        catch(Error::MemoryAllocError err)
+        {
+            cerr << "Memory alloc error" << endl;
+        }
         //reNumber();
     }
     void reNumber()
